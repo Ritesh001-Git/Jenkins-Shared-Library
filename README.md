@@ -52,6 +52,16 @@ pipeline {
                 }
             }
         }
+        stage('Build Docker Image without script') {
+            steps {
+                buildImage(
+                    imageName: 'my-app',
+                    imageTag: 'v1',
+                    dockerfile: 'Dockerfile',
+                    context: '.'
+                )
+            }
+        }
     }
 }
 ```
