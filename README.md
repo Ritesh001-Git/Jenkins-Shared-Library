@@ -40,6 +40,18 @@ pipeline {
                 }
             }
         }
+        stage('Build Image') {
+            steps {
+                script {
+                    buildImage(
+                        imageName: 'my-app',
+                        imageTag: 'v1',
+                        dockerfile: 'Dockerfile',
+                        context: '.'
+                    )
+                }
+            }
+        }
     }
 }
 ```
