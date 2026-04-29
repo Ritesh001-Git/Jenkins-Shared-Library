@@ -25,3 +25,22 @@
 <img src="https://github.com/DevMadhup/Jenkins_SharedLib/blob/main/assests/shared-lib-in-pipeline.png" />
 
 **Note:** @Library() _ is the syntax to use shared library.
+
+### How to use in Jenkinsfile
+```
+@Library('your-shared-lib') _
+
+pipeline {
+    agent { label "agent_name" }
+    stages {
+        stage('Clone') {
+            steps {
+                script{
+                    clone_repo("https://github.com/Ritesh001-Git/django-notes-app.git", "main")
+                }
+            }
+        }
+    }
+}
+```
+
