@@ -40,7 +40,7 @@ pipeline {
                 }
             }
         }
-        stage('Build Image') {
+        stage('Build Image using config = [:] map') {
             steps {
                 script {
                     buildImage(
