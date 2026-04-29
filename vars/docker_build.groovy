@@ -1,4 +1,5 @@
 def call(Map config = [:]){
+  // Elvis operator ?:
   def imageName = config.imageName ?: error("Image name is required")
   def imageTag = config.imagrTag ?: 'latest'
   def dockerfile = config.dockerfile ?: 'dockerfile'
